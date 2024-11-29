@@ -9,7 +9,7 @@ st.set_page_config(layout="wide",
 col1,col2,col3 = st.columns(3)
 
 with col3:
-    st.image(r"PreOp\NHS.jpg")
+    st.image('https://github.com/BarnabyRumbold/HSMA/blob/master/NHS.jpg')
 
 # Create title and layout info
 st.title("Attendance Predicator App")
