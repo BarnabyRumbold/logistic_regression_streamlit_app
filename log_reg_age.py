@@ -15,7 +15,7 @@ import plotly.express as px
 st.set_page_config(layout="wide")
 col1,col2,col3 = st.columns(3)
 with col3:
-    st.image(r"C:\Users\Barnaby.Rumbold\Desktop\NHS2.jpeg")
+    st.image(r"https://github.com/BarnabyRumbold/HSMA/blob/master/NHS.jpg")
 st.title('Age')
 col1,col2 = st.columns(2)
 
