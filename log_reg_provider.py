@@ -15,7 +15,7 @@ import plotly.express as px
 st.set_page_config(layout="wide")
 col1,col2,col3 = st.columns(3)
 with col3:
-    st.image(r"C:\Users\Barnaby.Rumbold\Desktop\NHS2.jpeg")
+    st.image(r"https://www.kentandmedway.icb.nhs.uk/application/files/cache/thumbnails/b9a92ca7b10d21ae1cdf056d95e99659.png")
 st.title('Provider')
 col1,col2 = st.columns(2)
 
