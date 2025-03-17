@@ -10,6 +10,7 @@ import warnings
 from sklearn.preprocessing import OneHotEncoder
 warnings.filterwarnings('ignore')
 import plotly.express as px
+import sqlalchemy
 
 # Connect to DW
 st.set_page_config(layout="wide")
@@ -22,41 +23,23 @@ col1,col2 = st.columns(2)
 # Connect to SQL
 
 
-conn = st.connection(
-    "sql",
-    dialect="tsql",
-    driver="pyodbc",
-    host="10.118.254.94\LIVE,1435",
-    database="MRT_KMCCG",
-    username="PROD.KMCCG.Barnaby_Rumbold",
-    password='SJ6N3obot5Qh4fWtcxPf',
-    query={
-        "driver": "ODBC Driver 17 for SQL Server",
-        "authentication": "ActiveDirectoryInteractive",
-        "encrypt": "yes",
-    },
-)
 
-df = conn.query("SELECT TOP (50000)  [DER_AGE_AT_CDS_ACTIVITY_DATE], ATTENDANCE_STATUS\
-                FROM [MRT_KMCCG].[dbo].[FSUS_OPA_MAIN]\
-                WHERE [DER_AGE_AT_CDS_ACTIVITY_DATE] IS NOT NULL AND ATTENDANCE_STATUS IS NOT NULL AND [DER_AGE_AT_CDS_ACTIVITY_DATE] > 0 AND [DER_AGE_AT_CDS_ACTIVITY_DATE] < 116 AND REP_DATE >= '20190101' AND ATTENDANCE_STATUS IN (3,7,5,6)")
-
-# cnxn = pyodbc.connect(driver='{ODBC Driver 17 for SQL Server}',
-#                                server='10.118.254.94\LIVE,1435',
-#                                database='MRT_KMCCG',
-#                                uid='PROD.KMCCG.Barnaby_Rumbold',pwd='SJ6N3obot5Qh4fWtcxPf')
+cnxn = pyodbc.connect(driver='{ODBC Driver 17 for SQL Server}',
+                               server='10.118.254.94\LIVE,1435',
+                               database='MRT_KMCCG',
+                               uid='',pwd='')
 
 
 
-# # Get access to data
-# @st.cache_data
-# def get_data() -> pd.DataFrame:
-#     return pd.read_sql(
+# Get access to data
+@st.cache_data
+def get_data() -> pd.DataFrame:
+    return pd.read_sql(
         
-#         "SELECT TOP (50000)  [DER_AGE_AT_CDS_ACTIVITY_DATE], ATTENDANCE_STATUS\
-#         FROM [MRT_KMCCG].[dbo].[FSUS_OPA_MAIN]\
-#         WHERE [DER_AGE_AT_CDS_ACTIVITY_DATE] IS NOT NULL AND ATTENDANCE_STATUS IS NOT NULL AND [DER_AGE_AT_CDS_ACTIVITY_DATE] > 0 AND [DER_AGE_AT_CDS_ACTIVITY_DATE] < 116 AND REP_DATE >= '20190101' AND ATTENDANCE_STATUS IN (3,7,5,6)", 
-#         cnxn)
+        "SELECT TOP (50000)  [DER_AGE_AT_CDS_ACTIVITY_DATE], ATTENDANCE_STATUS\
+        FROM [MRT_KMCCG].[dbo].[FSUS_OPA_MAIN]\
+        WHERE [DER_AGE_AT_CDS_ACTIVITY_DATE] IS NOT NULL AND ATTENDANCE_STATUS IS NOT NULL AND [DER_AGE_AT_CDS_ACTIVITY_DATE] > 0 AND [DER_AGE_AT_CDS_ACTIVITY_DATE] < 116 AND REP_DATE >= '20190101' AND ATTENDANCE_STATUS IN (3,7,5,6)", 
+        cnxn)
 
 # Call function to get dataframe
 df = get_data() 
