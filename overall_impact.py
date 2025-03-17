@@ -33,7 +33,7 @@ st.title('Overall Assessment Of Impact Variables')
 cnxn = pyodbc.connect(driver='{ODBC Driver 17 for SQL Server}',
                                server='10.118.254.94\LIVE,1435',
                                database='MRT_KMCCG_SANDBOX',
-                               uid='PROD.KMCCG.Barnaby_Rumbold',pwd='SJ6N3obot5Qh4fWtcxPf')         
+                               uid='',pwd='')         
  
 #--Features -- variables that affect outcome
 #--Weights -- what we are trying to predict
