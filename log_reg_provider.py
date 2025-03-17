@@ -23,7 +23,7 @@ col1,col2 = st.columns(2)
 cnxn = pyodbc.connect(driver='{ODBC Driver 17 for SQL Server}',
                                server='10.118.254.94\LIVE,1435',
                                database='MRT_KMCCG_SANDBOX',
-                               uid='PROD.KMCCG.Barnaby_Rumbold',pwd='SJ6N3obot5Qh4fWtcxPf')
+                               uid='',pwd='')
 
 
 
