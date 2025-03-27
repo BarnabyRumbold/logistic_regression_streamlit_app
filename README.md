@@ -52,9 +52,8 @@ Where:
 
 ## Results & Reporting
 After running the model, the app generates:
-- **Prediction reports in Markdown format**, summarizing key insights.
-- **Performance metrics**, including accuracy, precision, recall, and F1-score.
-- **Visualizations**, such as ROC curves and confusion matrices.
+- **Visualisations in a Streamlit App**, summarizing key insights, dependent on different demographics.
+
 
 ## Contributing
 Contributions are welcome! To contribute:
