@@ -11,10 +11,13 @@ This application leverages logistic regression to predict patient attendances ba
 
 ## Data Sources
 The model uses data extracted from the Kent and Medway Integrated Care Board's warehouse, including:
-- **Demographic data** (age, gender, location, etc.).
-- **Historical attendance records** (date, time, and frequency of visits).
-- **Medical history indicators** (chronic conditions, prior hospitalizations, etc.).
-- **External factors** (weather, public holidays, etc.).
+- **Demographic Data - Age**
+- **Demographic Data - Deprivation**
+- **Demographic Data - Ethnicity**
+- **Demographic Data - Gender**
+- **Geographic Data - Postcode**
+- **Organisational Data - Provider** 
+- **Clinical Data - Speciality** 
 
 ## Installation
 Ensure you have Python installed along with the required dependencies. Clone the repository and install dependencies via pip:
@@ -35,7 +38,6 @@ Run the application using the command below:
 python app.py
 ```
 
-You can provide new datasets for inference by modifying the `data/input.csv` file.
 
 ## Model Explanation
 Logistic regression is a statistical method used for binary classification. In this application, it predicts whether a patient will attend an appointment (1) or not (0) based on historical data.
